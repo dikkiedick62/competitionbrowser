@@ -1,0 +1,73 @@
+
+d:\git\competitionbrowser>rem 2010 
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 1 
+Running program with season 2010 levelId 1 compId 3037
+Started at 17:16:31
+found competition Eredivisie
+90 matches found
+Finished at 17:16:44
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 2 -c 1481 
+Running program with season 2010 levelId 2 compId 1481
+Started at 17:16:44
+Finding compId page
+found competition Hoofdklasse poule 1
+63 matches found
+Finished at 17:16:53
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 2 -c 1482 
+Running program with season 2010 levelId 2 compId 1482
+Started at 17:16:53
+Finding compId page
+found competition Hoofdklasse poule 2
+84 matches found
+Finished at 17:17:04
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 5 -c 1468 
+Running program with season 2010 levelId 5 compId 1468
+Started at 17:17:04
+Finding compId page
+found competition 2e klasse poule 1
+63 matches found
+Finished at 17:17:11
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 5 -c 1469 
+Running program with season 2010 levelId 5 compId 1469
+Started at 17:17:11
+Finding compId page
+found competition 2e klasse poule 2
+108 matches found
+Finished at 17:17:23
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 5 -c 1470 
+Running program with season 2010 levelId 5 compId 1470
+Started at 17:17:24
+Finding compId page
+found competition 2e klasse poule 3
+84 matches found
+Finished at 17:17:34
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 5 -c 1471 
+Running program with season 2010 levelId 5 compId 1471
+Started at 17:17:34
+Finding compId page
+found competition 2e divisie poule 4
+108 matches found
+Finished at 17:17:45
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 5 -c 1472 
+Running program with season 2010 levelId 5 compId 1472
+Started at 17:17:45
+Finding compId page
+found competition 2e divisie poule 5
+45 matches found
+Finished at 17:17:51
+
+d:\git\competitionbrowser>python run_direct.py -s 2010 -l 5 -c 1473 
+Running program with season 2010 levelId 5 compId 1473
+Started at 17:17:51
+Finding compId page
+found competition 2e divisie poule 6
+63 matches found
+Finished at 17:17:58

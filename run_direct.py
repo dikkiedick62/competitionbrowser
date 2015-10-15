@@ -139,7 +139,7 @@ for o, a in myopts:
     elif o == '-u':
         config['user'] = a
     elif o == '-h':
-        config['host'] = h
+        config['host'] = a
     else:
         print("Usage: %s -s season -l levelId -c compId" % sys.argv[0])
 
@@ -155,7 +155,7 @@ c = re.compile('<span>(.+)  Seizoen [0-9]+-[0-9]+</span>')
 p = re.compile('<td class=\'num\'>([0-9]+-[0-9]+-[0-9]+)</td>\n\s+<td class=\'num\'>[0-9]+:[0-9]+</td>\n\s+<td class=\'num\'>.+</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\s+<td class=\'final\'><a href="snooker.htm.php\?GameID=([0-9]+)".+>([0-9]) - ([0-9])</a></td>', re.UNICODE)
 p2 = re.compile('<td class=\'num\'>([0-9]+-[0-9]+-[0-9]+)</td>\n\s+<td class=\'num\'>[0-9]+:[0-9]+</td>\n\s+<td class=\'num\'>.+</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\s+<td class=\'final\'>(&nbsp;)()()</td>', re.UNICODE)
 
-q = re.compile('<td>([\w0-9\s]+)</td><td> vs </td><td>([\w0-9\s]+)</td><td>([0-9]) - ([0-9])</td><tr>', re.UNICODE)
+q = re.compile('<td>([\w0-9\s\.]+)</td><td> vs </td><td>([\w0-9\s\.]+)</td><td>([0-9]) - ([0-9])</td><tr>', re.UNICODE)
 s = requests.Session()
 
 competition = ""

@@ -100,11 +100,28 @@ def processIteratorSimple(it):
         insert_cursor.execute(add_match, data_match)
 
         r = s.get("http://competitie.knbb.nl/snooker.htm.php?GameID="+gameId);
+        q = re.compile('<td>([\w0-9\s\.]+)</td><td> vs </td><td>([\w0-9\s\.]+)</td><td>([0-9]) - ([0-9])</td><tr>', re.UNICODE)
+        qleft = re.compile('<td></td><td> vs </td><td>([\w0-9\s\.]+)</td><td>([0-9]) - ([0-9])</td><tr>', re.UNICODE)
+        qright = re.compile('<td>([\w0-9\s\.]+)</td><td> vs </td><td></td><td>([0-9]) - ([0-9])</td><tr>', re.UNICODE)
+
+
         qiterator = q.finditer(r.text)
         for qmatch in qiterator:
-            # print '%s versus %s  = %s - %s' % (qmatch.group(1), qmatch.group(2), qmatch.group(3), qmatch.group(4))
+            print '%s versus %s  = %s - %s' % (qmatch.group(1), qmatch.group(2), qmatch.group(3), qmatch.group(4))
             data_match_detail = (gameId, qmatch.group(1), qmatch.group(2), qmatch.group(3), qmatch.group(4))
             insert_cursor.execute(add_match_detail, data_match_detail)
+        qleftiterator = qleft.finditer(r.text)
+
+        #for qmatch in qleftiterator:
+        #    print '%s versus %s  = %s - %s' % ('n.b.', qmatch.group(1), qmatch.group(2), qmatch.group(3))
+        #    data_match_detail = (gameId, 'n.b.', qmatch.group(1), qmatch.group(2), qmatch.group(3))
+        #    insert_cursor.execute(add_match_detail, data_match_detail)
+        #
+        #qrightiterator = qright.finditer(r.text)
+        #for qmatch in qrightiterator:
+        #    print '%s versus %s  = %s - %s' % (qmatch.group(1), 'n.b.',  qmatch.group(2), qmatch.group(3))
+        #    data_match_detail = (gameId, qmatch.group(1), 'n.b.', qmatch.group(2), qmatch.group(3))
+        #    insert_cursor.execute(add_match_detail, data_match_detail)
 
     # close cursors
     insert_cursor.close()
@@ -155,7 +172,7 @@ c = re.compile('<span>(.+)  Seizoen [0-9]+-[0-9]+</span>')
 p = re.compile('<td class=\'num\'>([0-9]+-[0-9]+-[0-9]+)</td>\n\s+<td class=\'num\'>[0-9]+:[0-9]+</td>\n\s+<td class=\'num\'>.+</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\s+<td class=\'final\'><a href="snooker.htm.php\?GameID=([0-9]+)".+>([0-9]) - ([0-9])</a></td>', re.UNICODE)
 p2 = re.compile('<td class=\'num\'>([0-9]+-[0-9]+-[0-9]+)</td>\n\s+<td class=\'num\'>[0-9]+:[0-9]+</td>\n\s+<td class=\'num\'>.+</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\n\s+<td class=\'text\'>([\w0-9\.\s\/\&\'\!-]+)</td>\s+<td class=\'final\'>(&nbsp;)()()</td>', re.UNICODE)
 
-q = re.compile('<td>([\w0-9\s\.]+)</td><td> vs </td><td>([\w0-9\s\.]+)</td><td>([0-9]) - ([0-9])</td><tr>', re.UNICODE)
+
 s = requests.Session()
 
 competition = ""
@@ -212,7 +229,7 @@ if levelId == "1":
         ap = y[0]['away_player']
         data_update_detail_query = (hs, aws, gi, hp ,ap)
         update_cursor.execute(update_detail_query, data_update_detail_query)
-        print "update cm_match_details set home_score = %s, away_score = %s where game_id = %s and home_player = %s and away+player = %s" % (y[0]['home_score'], y[0]['away_score'], y[0]['game_id'], y[0]['home_player'], y[0]['away_player'])
+        #print "update cm_match_details set home_score = %s, away_score = %s where game_id = %s and home_player = %s and away+player = %s" % (y[0]['home_score'], y[0]['away_score'], y[0]['game_id'], y[0]['home_player'], y[0]['away_player'])
 
 #else:
 #    idx = idx + processIterator(piterator)

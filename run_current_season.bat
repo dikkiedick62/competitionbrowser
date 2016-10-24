@@ -1,14 +1,15 @@
-rem 2015
+rem 2016
 
-python run_direct.py -s 2015 -l 1
-python run_direct.py -s 2015 -l 2 -c 3033
-python run_direct.py -s 2015 -l 2 -c 3034
-python run_direct.py -s 2015 -l 2 -c 3035
-python run_direct.py -s 2015 -l 2 -c 3036
-python run_direct.py -s 2015 -l 2 -c 3037
-python run_direct.py -s 2015 -l 2 -c 3038
+python run_direct.py -s 2016 -l 1        
+python run_direct.py -s 2016 -l 2 -c 3129
+python run_direct.py -s 2016 -l 2 -c 3134
+python run_direct.py -s 2016 -l 2 -c 3135
+python run_direct.py -s 2016 -l 2 -c 3136
+python run_direct.py -s 2016 -l 2 -c 3137
+python run_direct.py -s 2016 -l 2 -c 3138
+python run_direct.py -s 2016 -l 2 -c 3141
+                                      
+python run_direct.py -s 2016 -l 5 -c 3139
+python run_direct.py -s 2016 -l 5 -c 3140
+python run_direct.py -s 2016 -l 5 -c 3130
 
-python run_direct.py -s 2015 -l 5 -c 3039
-python run_direct.py -s 2015 -l 5 -c 3040
-python run_direct.py -s 2015 -l 5 -c 3041
-python run_direct.py -s 2015 -l 5 -c 3042
